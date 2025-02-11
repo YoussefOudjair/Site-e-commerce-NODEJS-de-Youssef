@@ -33,14 +33,6 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getCart = (req, res, next) => {
-<<<<<<< HEAD
-  res.render('shop/cart', {
-    path: '/cart',
-    pageTitle: 'Your Cart'
-  });
-};
-
-=======
   Cart.getCart(cart => {
     Product.fetchAll(products => {
       const cartProducts = [];
@@ -60,18 +52,14 @@ exports.getCart = (req, res, next) => {
   });
 };
 
-
->>>>>>> 03889cc (Ajout de la section panier)
 exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId, product => {
     Cart.addProduct(prodId, product.price);
+    res.redirect('/cart');
   });
-  res.redirect('/cart');
 };
 
-<<<<<<< HEAD
-=======
 exports.postCartDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId, product => {
@@ -90,21 +78,9 @@ exports.getCheckout = (req, res, next) => {
   });
 };
 
->>>>>>> 03889cc (Ajout de la section panier)
 exports.getOrders = (req, res, next) => {
   res.render('shop/orders', {
     path: '/orders',
     pageTitle: 'Your Orders'
   });
 };
-
-<<<<<<< HEAD
-exports.getCheckout = (req, res, next) => {
-  res.render('shop/checkout', {
-    path: '/checkout',
-    pageTitle: 'Checkout'
-  });
-};
-=======
-
->>>>>>> 03889cc (Ajout de la section panier)

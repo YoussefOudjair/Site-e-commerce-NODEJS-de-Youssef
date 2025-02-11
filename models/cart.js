@@ -9,28 +9,14 @@ const p = path.join(
 
 module.exports = class Cart {
   static addProduct(id, productPrice) {
-<<<<<<< HEAD
-    // Récupérer le panier précédent
-=======
->>>>>>> 03889cc (Ajout de la section panier)
     fs.readFile(p, (err, fileContent) => {
       let cart = { products: [], totalPrice: 0 };
       if (!err) {
         cart = JSON.parse(fileContent);
       }
-<<<<<<< HEAD
-      // Analyser le panier => Trouver un produit existant
-      const existingProductIndex = cart.products.findIndex(
-        prod => prod.id === id
-      );
-      const existingProduct = cart.products[existingProductIndex];
-      let updatedProduct;
-      // Ajouter un nouveau produit/augmenter la quantité
-=======
       const existingProductIndex = cart.products.findIndex(prod => prod.id === id);
       const existingProduct = cart.products[existingProductIndex];
       let updatedProduct;
->>>>>>> 03889cc (Ajout de la section panier)
       if (existingProduct) {
         updatedProduct = { ...existingProduct };
         updatedProduct.qty = updatedProduct.qty + 1;
@@ -46,9 +32,6 @@ module.exports = class Cart {
       });
     });
   }
-<<<<<<< HEAD
-};
-=======
 
   static deleteProduct(id, productPrice) {
     fs.readFile(p, (err, fileContent) => {
@@ -78,4 +61,3 @@ module.exports = class Cart {
     });
   }
 };
->>>>>>> 03889cc (Ajout de la section panier)
