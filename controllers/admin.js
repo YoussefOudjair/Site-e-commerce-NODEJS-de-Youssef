@@ -66,4 +66,10 @@ exports.getProducts = (req, res, next) => {
 
 exports.postDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
+<<<<<<< HEAD
 }
+=======
+  Product.deleteById(prodId);
+  res.redirect('/admin/products');
+};
+>>>>>>> 03889cc (Ajout de la section panier)

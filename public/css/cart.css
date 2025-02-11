@@ -1,0 +1,88 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Add padding to the left */
+}
+
+.cart-title {
+    margin-bottom: 20px;
+}
+
+.cart-list {
+    width: 100%;
+    padding: 0;
+}
+
+.cart-item {
+    border: 2px solid green;
+    box-shadow: 0 0 10px green;
+    padding: 10px;
+    margin: 10px 0; /* Adjust margin */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between items */
+    max-width: 400px; /* Adjust the maximum width */
+    width: 100%; /* Ensure the item takes full width */
+}
+
+.cart-item__image img {
+    width: 80px; /* Reduce the image width */
+    height: auto;
+    margin-right: 10px; /* Add space to the right of the image */
+}
+
+.cart-item__details {
+    flex: 1;
+    margin-left: 10px; /* Add left margin */
+}
+
+.cart-item__actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 5px; /* Reduce the gap between buttons */
+    justify-content: center; /* Center the buttons */
+}
+
+.cart-summary {
+    margin-top: 20px;
+}
+
+.cart-summary h2 {
+    margin-bottom: 10px;
+}
+
+/* Add styles for smaller buttons */
+.btn-small {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Styles for the confirm button */
+.btn-confirm {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-confirm:hover,
+.btn-confirm:active {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.btn-confirm:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
+}

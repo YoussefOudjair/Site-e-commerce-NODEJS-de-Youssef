@@ -33,12 +33,35 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getCart = (req, res, next) => {
+<<<<<<< HEAD
   res.render('shop/cart', {
     path: '/cart',
     pageTitle: 'Your Cart'
   });
 };
 
+=======
+  Cart.getCart(cart => {
+    Product.fetchAll(products => {
+      const cartProducts = [];
+      for (product of products) {
+        const cartProductData = cart.products.find(prod => prod.id === product.id);
+        if (cartProductData) {
+          cartProducts.push({ productData: product, qty: cartProductData.qty });
+        }
+      }
+      res.render('shop/cart', {
+        path: '/cart',
+        pageTitle: 'Your Cart',
+        products: cartProducts,
+        totalPrice: cart.totalPrice
+      });
+    });
+  });
+};
+
+
+>>>>>>> 03889cc (Ajout de la section panier)
 exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId, product => {
@@ -47,6 +70,27 @@ exports.postCart = (req, res, next) => {
   res.redirect('/cart');
 };
 
+<<<<<<< HEAD
+=======
+exports.postCartDeleteProduct = (req, res, next) => {
+  const prodId = req.body.productId;
+  Product.findById(prodId, product => {
+    Cart.deleteProduct(prodId, product.price);
+    res.redirect('/cart');
+  });
+};
+
+exports.getCheckout = (req, res, next) => {
+  Cart.getCart(cart => {
+    res.render('shop/checkout', {
+      path: '/checkout',
+      pageTitle: 'Checkout',
+      totalPrice: cart.totalPrice
+    });
+  });
+};
+
+>>>>>>> 03889cc (Ajout de la section panier)
 exports.getOrders = (req, res, next) => {
   res.render('shop/orders', {
     path: '/orders',
@@ -54,9 +98,13 @@ exports.getOrders = (req, res, next) => {
   });
 };
 
+<<<<<<< HEAD
 exports.getCheckout = (req, res, next) => {
   res.render('shop/checkout', {
     path: '/checkout',
     pageTitle: 'Checkout'
   });
 };
+=======
+
+>>>>>>> 03889cc (Ajout de la section panier)

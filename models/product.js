@@ -27,15 +27,25 @@ module.exports = class Product {
   }
 
   save() {
+<<<<<<< HEAD
     
+=======
+>>>>>>> 03889cc (Ajout de la section panier)
     getProductsFromFile(products => {
       if (this.id) {
         const existingProductIndex = products.findIndex(prod => prod.id === this.id);
         const updatedProducts = [...products];
+<<<<<<< HEAD
         updatedProducts [existingProductIndex] = this;
         fs.writeFile(p, JSON.stringify(updatedProducts), err => {
         console.log(err);
       });
+=======
+        updatedProducts[existingProductIndex] = this;
+        fs.writeFile(p, JSON.stringify(updatedProducts), err => {
+          console.log(err);
+        });
+>>>>>>> 03889cc (Ajout de la section panier)
       } else {
         this.id = Math.random().toString();
         products.push(this);
@@ -43,7 +53,10 @@ module.exports = class Product {
           console.log(err);
         });
       }
+<<<<<<< HEAD
       
+=======
+>>>>>>> 03889cc (Ajout de la section panier)
     });
   }
 
@@ -52,9 +65,15 @@ module.exports = class Product {
       const updatedProducts = products.filter(prod => prod.id !== id);
       fs.writeFile(p, JSON.stringify(updatedProducts), err => {
         if (!err) {
+<<<<<<< HEAD
 
         }
       })
+=======
+          console.log('Product deleted');
+        }
+      });
+>>>>>>> 03889cc (Ajout de la section panier)
     });
   }
 
@@ -68,4 +87,8 @@ module.exports = class Product {
       cb(product);
     });
   }
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> 03889cc (Ajout de la section panier)
