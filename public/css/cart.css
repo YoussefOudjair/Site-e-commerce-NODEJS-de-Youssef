@@ -1,9 +1,9 @@
 .cart-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    text-align: left; /* Align text to the left */
-    padding-left: 20px; /* Add padding to the left */
+    align-items: flex-start; 
+    text-align: left; 
+    padding-left: 20px; 
 }
 
 .cart-title {
@@ -19,31 +19,31 @@
     border: 2px solid green;
     box-shadow: 0 0 10px green;
     padding: 10px;
-    margin: 10px 0; /* Adjust margin */
+    margin: 10px 0; 
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between items */
-    max-width: 400px; /* Adjust the maximum width */
-    width: 100%; /* Ensure the item takes full width */
+    justify-content: space-between; 
+    max-width: 400px; 
+    width: 100%; 
 }
 
 .cart-item__image img {
-    width: 80px; /* Reduce the image width */
+    width: 80px; 
     height: auto;
-    margin-right: 10px; /* Add space to the right of the image */
+    margin-right: 10px; 
 }
 
 .cart-item__details {
     flex: 1;
-    margin-left: 10px; /* Add left margin */
+    margin-left: 10px; 
 }
 
 .cart-item__actions {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 5px; /* Reduce the gap between buttons */
-    justify-content: center; /* Center the buttons */
+    flex-direction: column; 
+    gap: 5px; 
+    justify-content: center; 
 }
 
 .cart-summary {
@@ -54,13 +54,12 @@
     margin-bottom: 10px;
 }
 
-/* Add styles for smaller buttons */
 .btn-small {
     padding: 5px 10px;
     font-size: 14px;
 }
 
-/* Styles for the confirm button */
+
 .btn-confirm {
     display: inline-block;
     padding: 10px 20px;
@@ -84,5 +83,5 @@
 
 .btn-confirm:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
+    box-shadow: 0 0 0 3px #00695c;
 }
