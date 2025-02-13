@@ -1,16 +1,6 @@
 {
-<<<<<<< HEAD
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-=======
-    "version": "0.2.0",
-    "configurations": [
-        
->>>>>>> 03889cc (Ajout de la section panier)
-
         {
             "type": "node",
             "request": "launch",
