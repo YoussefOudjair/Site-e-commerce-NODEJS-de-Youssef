@@ -1,6 +1,49 @@
 <%- include('../includes/head.ejs') %>
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="/css/cart.css">
+>>>>>>> 03889cc (Ajout de la section panier)
     </head>
 
     <body>
         <%- include('../includes/navigation.ejs') %>
+<<<<<<< HEAD
+=======
+        <main class="cart-container">
+            <h1 class="cart-title">Votre Panier</h1>
+            <% if (products.length > 0) { %>
+                <ul class="cart-list">
+                    <% products.forEach(prod => { %>
+                        <li class="cart-item">
+                            <div class="cart-item__image">
+                                <img src="<%= prod.productData.imageUrl %>" alt="<%= prod.productData.title %>">
+                            </div>
+                            <div class="cart-item__details">
+                                <h2><%= prod.productData.title %></h2>
+                                <p>Quantité: <%= prod.qty %></p>
+                                <p>Prix: <%= prod.productData.price %> €</p>
+                            </div>
+                            <div class="cart-item__actions">
+                                <form action="/cart-delete-item" method="post">
+                                    <input type="hidden" name="productId" value="<%= prod.productData.id %>">
+                                    <button class="btn btn-small" type="submit">Supprimer</button>
+                                </form>
+                                <form action="/products/<%= prod.productData.id %>" method="get">
+                                    <button class="btn btn-small" type="submit">Détails</button>
+                                </form>
+                            </div>
+                        </li>
+                    <% }) %>
+                </ul>
+                <div class="cart-summary">
+                    <h2>Total: <%= totalPrice %> €</h2>
+                    <form action="/checkout" method="get">
+                        <button class="btn btn-confirm" type="submit">Confirmer le paiement</button>
+                    </form>
+                </div>
+            <% } else { %>
+                <h2>Votre panier est vide</h2>
+            <% } %>
+        </main>
+>>>>>>> 03889cc (Ajout de la section panier)
         <%- include('../includes/end.ejs') %>

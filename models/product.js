@@ -27,15 +27,14 @@ module.exports = class Product {
   }
 
   save() {
-    
     getProductsFromFile(products => {
       if (this.id) {
         const existingProductIndex = products.findIndex(prod => prod.id === this.id);
         const updatedProducts = [...products];
-        updatedProducts [existingProductIndex] = this;
+        updatedProducts[existingProductIndex] = this;
         fs.writeFile(p, JSON.stringify(updatedProducts), err => {
-        console.log(err);
-      });
+          console.log(err);
+        });
       } else {
         this.id = Math.random().toString();
         products.push(this);
@@ -43,7 +42,6 @@ module.exports = class Product {
           console.log(err);
         });
       }
-      
     });
   }
 
@@ -52,9 +50,9 @@ module.exports = class Product {
       const updatedProducts = products.filter(prod => prod.id !== id);
       fs.writeFile(p, JSON.stringify(updatedProducts), err => {
         if (!err) {
-
+          console.log('Product deleted');
         }
-      })
+      });
     });
   }
 
